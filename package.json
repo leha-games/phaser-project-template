@@ -1,6 +1,6 @@
 {
   "name": "phaser-project-template",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Phaser Project Template",
   "main": "src/index.js",
   "scripts": {
