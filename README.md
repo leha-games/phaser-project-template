@@ -55,20 +55,20 @@ If you put the contents of the `dist` folder in a publicly-accessible location (
 you should be able to open `http://mycoolserver.com/index.html` and play your game.
 
 ## Update dependencies
-To update to a new major version all the packages, install the npm-check-updates package globally:
-`npm install -g npm-check-updates`
-`ncu -u`
-this will upgrade all the version hints in the package.json file, to dependencies and devDependencies, so npm can install the new major version.
-`npm install`
+To update to a new major version all the packages, install the npm-check-updates package globally:  
+`npm install -g npm-check-updates`  
+`ncu -u`  
+this will upgrade all the version hints in the package.json file, to dependencies and devDependencies, so npm can install the new major version.  
+`npm install`  
 `npm audit fix`
 
 ## Cordova
-`cordova create cordovafolder com.example.game`
-`cd cordovafolder`
-`cordova platform`
-`cordova platform add android`
+`cordova create cordovafolder com.example.game`  
+`cd cordovafolder`  
+`cordova platform`  
+`cordova platform add android`  
 `cordova prepare`
 
 Edit `AndroidManifest.xml` package name, `android:screenOrientation="portrait"`
-Add icons
 
+Add icons
