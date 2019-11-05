@@ -12,3 +12,20 @@ node_modules/
 # Build
 dist/
 /npm-debug.log
+
+/yandex_games
+
+### ApacheCordova ###
+# Apache Cordova generated files and directories
+cordova/bin/*
+!cordova/plugins
+!cordova/plugins/android.json
+!cordova/plugins/fetch.json
+cordova/plugins/*
+cordova/platforms/*
+
+cordova/node_modules
+cordova/www/index.js
+cordova/www
+cordova/js/**/*.js
+cordova/js/**/*.js.map
