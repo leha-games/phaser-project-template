@@ -8,8 +8,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="format-detection" content="telephone=no" />
-    <!-- uncomment the line below for cordova feature -->
-    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <% if (htmlWebpackPlugin.options.USE_CORDOVA){ %>
+    <!-- Cordova -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <% } %>
+
+    <% if (htmlWebpackPlugin.options.USE_YANDEX_GAMES_SDK){ %>
+    <!-- Yandex Games SDK -->
+    <script src="https://yandex.ru/games/sdk/v2"></script>
+    <script>
+        YaGames
+            .init({
+                screen	: {
+                    orientation: {
+                        value: 'portrait',
+                        lock: true
+                    }
+                }
+            })
+            .then(function(ysdk) {
+                ysdk.adv.showFullscreenAdv()
+                setInterval(function() { ysdk.adv.showFullscreenAdv(); }, 180000);
+            });
+    </script>
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function (reg) {
+                    console.log('Registration succeeded. Scope is ' + reg.scope);
+                })
+                .catch(function (error) {
+                    console.error('Trouble with sw: ', error);
+                });
+        }
+    </script>
+    <% } %>
+
     <style>
         body {
             margin: 0;
