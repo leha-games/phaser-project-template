@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const merge = require("webpack-merge");
 const path = require("path");
 const prod = require("./prod");
@@ -8,9 +7,6 @@ module.exports = merge(prod, {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./index.html",
-            USE_CORDOVA: true
-        }),
-        new webpack.DefinePlugin({
             USE_CORDOVA: true
         })
     ],

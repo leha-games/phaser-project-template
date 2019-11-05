@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const merge = require("webpack-merge");
 const path = require("path");
 const prod = require("./prod");
@@ -14,9 +13,6 @@ module.exports = merge(prod, {
         new ServiceWorkerWebpackPlugin({
             entry: path.join(__dirname, '../src/sw.js'),
             publicPath: ''
-        }),
-        new webpack.DefinePlugin({
-            USE_YANDEX_GAMES_SDK: true
         })
     ],
     output: {
